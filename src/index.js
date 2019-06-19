@@ -8,11 +8,12 @@ import rootReducer from "./reducers";
 import thunk from "redux-thunk";
 import logger from "redux-logger";
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+//const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
   rootReducer,
-  composeEnhancers(applyMiddleware(thunk, logger))
+  applyMiddleware(thunk, logger)
+  //composeEnhancers(applyMiddleware(thunk, logger))
 );
 
 ReactDOM.render(
